@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Entrada</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div class="card text-white">
+                <div class="card-header text-center pt-4">
+                    <h1 class="h4 text-center text-white">FORMULARIO</h1>
+                </div>
+                <div class="card-body">
+                    <form action="{{ url_for('submit') }}" method="post">
+                        <label for="zodiacSign">Selecciona tu signo zodiacal</label>
+                        <select class="form-select" name="ZodiacSign" id="zodiacSign" required>
+                            <option disabled selected>Elige uno</option>
+                            <option value="Acuario">Acuario</option>
+                            <option value="Piscis">Piscis</option>
+                            <option value="Aries">Aries</option>
+                            <option value="Tauro">Tauro</option>
+                            <option value="Géminis">Géminis</option>
+                            <option value="Cáncer">Cáncer</option>
+                            <option value="Leo">Leo</option>
+                            <option value="Virgo">Virgo</option>
+                            <option value="Libra">Libra</option>
+                            <option value="Escorpio">Escorpio</option>
+                            <option value="Sagitario">Sagitario</option>
+                            <option value="Capricornio">Capricornio</option>
+                        </select><br>
+
+                        <label>¿Cómo describirías tu nivel de energía?</label><br>
+                        <input type="radio" name="energyLevel" value="Alto" required> Alto<br>
+                        <input type="radio" name="energyLevel" value="Medio" required> Medio<br>
+                        <input type="radio" name="energyLevel" value="Bajo" required> Bajo<br>
+
+                        <label>¿Qué actitud tienes hacia las nuevas experiencias?</label><br>
+                        <input type="radio" name="newExperiences" value="Entusiasta" required> Entusiasta, siempre en
+                        busca de
+                        aventuras<br>
+                        <input type="radio" name="newExperiences" value="Abierto" required> Abierto, pero prefiero la
+                        estabilidad<br>
+                        <input type="radio" name="newExperiences" value="No me gustan" required> No me gustan mucho los
+                        cambios,
+                        prefiero la rutina<br>
+
+                        <!-- Additional Questions -->
+                        <label>¿Qué cualidad valoras más en la vida?</label><br>
+                        <input type="radio" name="valuedQuality" value="Libertad personal" required> Libertad
+                        personal<br>
+                        <input type="radio" name="valuedQuality" value="Comodidad y seguridad" required> Comodidad y
+                        seguridad<br>
+                        <input type="radio" name="valuedQuality" value="Conocimiento y aprendizaje" required>
+                        Conocimiento y
+                        aprendizaje<br>
+
+                        <label>¿Qué te parece más importante en tus relaciones cercanas?</label><br>
+                        <input type="radio" name="importantInRelationships" value="Lealtad y fidelidad" required>
+                        Lealtad y
+                        fidelidad<br>
+                        <input type="radio" name="importantInRelationships" value="Empatía y cariño" required> Empatía y
+                        cariño<br>
+                        <input type="radio" name="importantInRelationships" value="Carisma y creatividad" required>
+                        Carisma y
+                        creatividad<br>
+
+                        <label>¿Cómo te consideras en términos de adaptabilidad?</label><br>
+                        <input type="radio" name="adaptability" value="Muy adaptable" required> Muy adaptable, me ajusto
+                        fácilmente a
+                        las circunstancias<br>
+                        <input type="radio" name="adaptability" value="Puedo adaptarme" required> Puedo adaptarme según
+                        la situación<br>
+                        <input type="radio" name="adaptability" value="No soy muy flexible" required> No soy muy
+                        flexible, me cuesta
+                        adaptarme a cambios<br>
+
+                        <label>¿Qué opinas sobre la comunicación y la expresión de ideas?</label><br>
+                        <input type="radio" name="communication" value="Me gusta hablar" required> Me gusta hablar y
+                        expresarme
+                        abiertamente<br>
+                        <input type="radio" name="communication" value="Prefiero escuchar" required> Prefiero escuchar y
+                        hablar en
+                        momentos necesarios<br>
+                        <input type="radio" name="communication" value="No me siento cómodo" required> No me siento
+                        cómodo/a
+                        comunicándome constantemente<br>
+
+                        <label>¿Qué tan curioso/a eres sobre el mundo que te rodea?</label><br>
+                        <input type="radio" name="curiosity" value="Muy curioso/a" required> Muy curioso/a, siempre
+                        quiero aprender
+                        cosas nuevas<br>
+                        <input type="radio" name="curiosity" value="Algo curioso/a" required> Algo curioso/a, pero solo
+                        sobre ciertos
+                        temas<br>
+                        <input type="radio" name="curiosity" value="No siento una gran curiosidad" required> No siento
+                        una gran
+                        curiosidad, me conformo con lo que sé<br>
+
+                        <label>¿Qué cualidad te identifica mejor en tus relaciones personales?</label><br>
+                        <input type="radio" name="personalQuality" value="Empatía y sensibilidad" required> Empatía y
+                        sensibilidad hacia
+                        los demás<br>
+                        <input type="radio" name="personalQuality" value="Ambición y determinación" required> Ambición y
+                        determinación
+                        en lo que hago<br>
+                        <input type="radio" name="personalQuality" value="Lealtad y protección" required> Lealtad y
+                        protección hacia mis
+                        seres queridos<br>
+
+                        <label>¿Qué tipo de ambiente prefieres para sentirte cómodo/a?</label><br>
+                        <input type="radio" name="preferredEnvironment" value="Uno lleno de estímulos" required> Uno
+                        lleno de estímulos
+                        y actividades<br>
+                        <input type="radio" name="preferredEnvironment" value="Un ambiente tranquilo" required> Un
+                        ambiente tranquilo y
+                        relajado<br>
+                        <input type="radio" name="preferredEnvironment" value="Un espacio intelectualmente estimulante"
+                            required> Un
+                        espacio intelectualmente estimulante<br>
+
+                        <label>¿Cómo sueles manejar tus emociones?</label><br>
+                        <input type="radio" name="emotionManagement" value="Las expreso abiertamente" required> Las
+                        expreso abiertamente
+                        y las enfrento<br>
+                        <input type="radio" name="emotionManagement" value="Las gestiono internamente" required> Las
+                        gestiono
+                        internamente y procuro estar en calma<br>
+                        <input type="radio" name="emotionManagement" value="No suelo expresarlas mucho" required> No
+                        suelo expresarlas
+                        mucho, las guardo para mí<br>
+
+                        <label>¿Qué te parece más atractivo en un compañero/a?</label><br>
+                        <input type="radio" name="attractiveQuality" value="Su creatividad y originalidad" required> Su
+                        creatividad y
+                        originalidad<br>
+                        <input type="radio" name="attractiveQuality" value="Su lealtad y sinceridad" required> Su
+                        lealtad y
+                        sinceridad<br>
+                        <input type="radio" name="attractiveQuality" value="Su empatía y apoyo emocional" required> Su
+                        empatía y apoyo
+                        emocional<br>
+
+                        <label>¿Cómo te sientes frente a situaciones de liderazgo?</label><br>
+                        <input type="radio" name="leadership" value="Me siento cómodo/a" required> Me siento cómodo/a y
+                        disfruto
+                        asumiendo el control<br>
+                        <input type="radio" name="leadership" value="Puedo liderar si es necesario" required> Puedo
+                        liderar si es
+                        necesario, pero no es mi preferencia<br>
+                        <input type="radio" name="leadership" value="No me gusta liderar" required> No me gusta liderar,
+                        prefiero seguir
+                        a otros<br>
+
+                        <label>¿Cuál es tu enfoque principal cuando enfrentas un desafío?</label><br>
+                        <input type="radio" name="challengeApproach" value="Perseverar hasta lograr" required>
+                        Perseverar hasta lograr
+                        mi objetivo, sin importar cuánto tiempo tome<br>
+                        <input type="radio" name="challengeApproach" value="Buscar el camino más placentero" required>
+                        Buscar el camino
+                        más placentero y armonioso para superar el desafío<br>
+                        <input type="radio" name="challengeApproach" value="Evaluar las opciones con calma" required>
+                        Evaluar las
+                        opciones con calma y determinar la estrategia más efectiva<br>
+                        <button class="btn btn-light w-100 mt-2" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
